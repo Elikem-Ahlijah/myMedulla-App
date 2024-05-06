@@ -16,8 +16,8 @@ def send_request():
     print(url)
     
     if url:
-        response = requests.get(url)
-        return jsonify({'status': 'success', 'data': response.text}), 200
+        # response = requests.get(url)
+        return jsonify({'status': 'success', 'data': url}), 200
     else:
         return jsonify({'status': 'error', 'message': 'URL not provided'}), 400
 
