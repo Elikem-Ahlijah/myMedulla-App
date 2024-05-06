@@ -13,6 +13,8 @@ def send_request():
     data = request.get_json()
     url = data.get('url')
     
+    print(url)
+    
     if url:
         response = requests.get(url)
         return jsonify({'status': 'success', 'data': response.text}), 200
