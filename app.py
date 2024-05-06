@@ -10,7 +10,7 @@ def index():
 
 @app.route('/send_request', methods=['POST'])
 def send_request():
-    data = request.json
+    data = request.get_json()
     url = data.get('url')
     
     if url:
