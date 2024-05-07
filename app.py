@@ -10,12 +10,14 @@ def index():
 
 @app.route('/send_request', methods=['POST'])
 def send_request():
-    data = request.json
+    data = request.get_json()
     url = data.get('url')
     
+    print(url)
+    
     if url:
-        response = requests.get(url)
-        return jsonify({'status': 'success', 'data': response.text}), 200
+        # response = requests.get(url)
+        return jsonify({'status': 'success', 'data': url}), 200
     else:
         return jsonify({'status': 'error', 'message': 'URL not provided'}), 400
 
