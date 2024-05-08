@@ -31,6 +31,8 @@ def send_request():
     else:
         return jsonify({'status': 'error', 'message': 'URL not provided'}), 400
     
+    
+    
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
